@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User                                     # User is predefined in Django
+from django.urls import reverse
 
 class Post(models.Model):
     title = models.CharField(max_length=100)                                    # Title with maximium lenght
@@ -17,3 +18,6 @@ class Post(models.Model):
         -> post = Post.objects.all() -> Will now display the title
         '''
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('post-detail', kwargs={'pk': self.pk})
