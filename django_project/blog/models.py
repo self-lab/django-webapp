@@ -19,5 +19,9 @@ class Post(models.Model):
         '''
         return self.title
 
-    def get_absolute_url(self):
+    def get_absolute_url(self):                                                 # Tells django how to find url to a post
+        '''
+        Redirect will redirect to a route, reverse returns the url as a string.
+        The view will handle the redirect.
+        '''
         return reverse('post-detail', kwargs={'pk': self.pk})

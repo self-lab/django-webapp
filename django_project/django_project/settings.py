@@ -129,3 +129,13 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'                                             
 
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'SMTP.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+# First create a new gmail user account with an application specific
+# password to use the password reset service
+# EMAIL_HOST_USER = os.environ.get('EMAIL_USER')                                  # setup for gmail account - acc creation down
+# EMAIL_HOST_PASSWORD =  os.environ.get('EMAIL_PASS')                             # setup for gmail pw - acc creation down
